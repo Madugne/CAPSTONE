@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "pizza@pizza.com",
+      "password": "$2a$10$TOKxmOv.ndpEHK.7UHiuGuQXnK2k0JXicYpSexGpRg2MReyyMaw3a",
+      "name": "pizza",
+      "id": 1
+    },
+    {
+      "email": "pane@pane.com",
+      "password": "$2a$10$eWqIGEpsMfu0N4wMVO20GO1UDBJTWBIUIiTFigTWs3FzB68vmn6iu",
+      "name": "pane",
+      "id": 2
+    },
+    {
+      "email": "pasta@pasta.com",
+      "password": "$2a$10$I5PWuCl5R8uIkWcHK6G6qeVFMveJ7YYLEF2fZz2eX5doKbWp/2U/.",
+      "name": "pasta",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<body>
+    <div class="container text-center">
+        <div class="row">
+            <h1 class="p-5">Benvenuto!</h1>
+            <div>
+                <h1 class="mt-5">Sei gia' un utente?</h1>
+                <div class="d-flex justify-content-around m-5">
+                    <button type="button" class="btn btn-danger btn-lg mt-5 px-5"
+                        [routerLink]="['/login']">Accedi</button>
+                    <button type="button" class="btn btn-secondary btn-lg mt-5 px-5"
+                        [routerLink]="['/register']">Registrati</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</body>

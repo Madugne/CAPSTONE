@@ -1,0 +1,36 @@
+<nav class="navbar navbar-dark bg-dark text-dark navbar-expand-lg">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item" *ngIf="utente">
+                    <a class="nav-link" [routerLink]="['/list']" routerLinkActive="active">pokemon</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active navbar-brand" aria-current="page" [routerLink]="['/']"
+                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!utente">Home</a>
+                </li>
+                <li class="dropdown" *ngIf="utente">
+                    <a class="nav-link dropdown-toggle" [routerLink]="['/profile']" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Profilo
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" [routerLink]="['/profile/details']">Dettagli</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/profile/favorites']">Preferiti</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" *ngIf="!utente">
+                    <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Accedi</a>
+                </li>
+                <li class="nav-item" *ngIf="!utente">
+                    <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Registrati</a>
+                </li>
+            </ul>
+            <div class="text-end" *ngIf="utente">
+                <h6>Benvenuto {{utente.user.name }} </h6>
+                <button type="button" id="logout" name="logout" class="btn btn-danger" (click)="logout()">Esci</button>
+            </div>
+        </div>
+    </div>
+</nav>
