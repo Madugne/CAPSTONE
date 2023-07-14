@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/movie.interface';
 import { Favourite } from 'src/app/models/favourite.interface';
 import { Auth } from 'src/app/auth/auth.interface';
 import { AuthService } from 'src/app/auth/auth.service';
 import { PokemonService } from 'src/app/service/pokemon.service';
+import { Pokemon } from 'src/app/models/pokemon.interface';
 
 @Component({
     selector: 'app-favorites',
@@ -11,11 +11,38 @@ import { PokemonService } from 'src/app/service/pokemon.service';
     styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent implements OnInit {
-    constructor(private pokemonService: PokemonService) {}
+    user: Auth | null = null;
+    favoriti: Pokemon[] = [];
 
-    get favorites(): any[] {
-        return this.pokemonService.favorites;
+    constructor(
+        private pokemonService: PokemonService,
+        private authSrv: AuthService
+    ) {}
+
+    ngOnInit(): void {
+        this.authSrv.user$.subscribe((userData) => {
+            this.user = userData;
+            this.recuperaFavoriti();
+        });
     }
 
-    ngOnInit(): void {}
+    recuperaFavoriti(): void {
+        if (this.user) {
+            this.pokemonService
+                .recuperaFavoriti(this.user.user.id)
+                .subscribe((favoriti: Favourite[]) => {
+                    const pokemonIds = favoriti.map(
+                        (f: Favourite) => f.pokemonId
+                    );
+                    this.pokemonService
+                        .recuperaPokemon()
+                        .subscribe((pokemons: Pokemon[]) => {
+                            console.log(pokemons);
+                            this.favoriti = pokemons.filter((p: Pokemon) =>
+                                pokemonIds.includes(p.id)
+                            );
+                        });
+                });
+        }
+    }
 }

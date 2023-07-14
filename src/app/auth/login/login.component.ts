@@ -16,12 +16,12 @@ export class LoginComponent implements OnInit {
     accedi(form: NgForm) {
         try {
             this.authSrv.login(form.value).subscribe();
-            alert('Login effettuato!');
+            alert('Hello!');
             setTimeout(() => {
                 this.router.navigate(['/list']);
             }, 500);
         } catch (error) {
-            alert('Login errato');
+            alert('Login failed!');
             console.error(error);
             this.router.navigate(['/login']);
         }

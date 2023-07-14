@@ -1,5 +1,5 @@
 export interface Favourite {
-    movieId: number;
+    pokemonId: number;
     userId: number;
     id?: number;
 }

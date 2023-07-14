@@ -2,6 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { concat, Subscription } from 'rxjs';
 import { PokemonService } from 'src/app/service/pokemon.service';
 import { Router } from '@angular/router';
+import { Auth } from 'src/app/auth/auth.interface';
+import { Favourite } from 'src/app/models/favourite.interface';
+import { Pokemon } from 'src/app/models/pokemon.interface';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
     selector: 'app-list',
@@ -13,10 +17,22 @@ export class ListComponent implements OnInit, OnDestroy {
 
     subscriptions: Subscription[] = [];
 
+    utente!: any;
+    favoriti: Favourite[] = [];
+
+    // SEARCHBAR
+
+    term = '';
+
+    // SEARCHBAR
+
     constructor(
         private pokemonService: PokemonService,
         private router: Router
-    ) {}
+    ) {
+        this.utente = localStorage.getItem('user');
+        this.utente = JSON.parse(this.utente);
+    }
 
     get pokemons(): any[] {
         return this.pokemonService.pokemons;
@@ -30,6 +46,9 @@ export class ListComponent implements OnInit, OnDestroy {
         if (!this.pokemons.length) {
             this.loadMore();
         }
+        this.pokemonService
+            .recuperaPreferiti()
+            .subscribe((pokemon) => (this.favoriti = pokemon));
     }
 
     ngOnDestroy(): void {
@@ -61,11 +80,49 @@ export class ListComponent implements OnInit, OnDestroy {
         return this.pokemonService.getType(pokemon);
     }
 
+    /*
     addToFavorites(pokemon: any): void {
         // Add the Pokemon to the favorites list in the PokemonService
         this.pokemonService.addToFavorites(pokemon);
+    }
+    */
 
-        // Navigate to the favorites route
-        this.router.navigate(['/favorites']);
+    aggiungiFavorito(idPokemon: number): void {
+        const favorito: Favourite = {
+            userId: this.utente!.user.id,
+            pokemonId: idPokemon,
+        };
+
+        this.pokemonService.aggiungiFavorito(favorito).subscribe(() => {
+            this.pokemonService
+                .recuperaFavoriti(this.utente!.user.id)
+                .subscribe((response) => {
+                    this.favoriti = response;
+                });
+        });
+    }
+
+    eliminaFavorito(pokemon: number): void {
+        const userId = JSON.parse(localStorage.getItem('user')!).user.id;
+        const trovato = this.favoriti.find(
+            (favorito) =>
+                favorito.pokemonId === pokemon && favorito.userId === userId
+        )?.id;
+        this.pokemonService.rimuoviFavorito(trovato!).subscribe(() => {
+            this.pokemonService
+                .recuperaFavoriti(this.utente!.user.id)
+                .subscribe((response) => {
+                    this.favoriti = response;
+                });
+        });
+    }
+
+    isFavorito(pokemon: Pokemon): Favourite | undefined {
+        return this.favoriti.find((f) => f.pokemonId === pokemon.id);
+    }
+
+    getIdFavorito(pokemon: Pokemon): number | undefined {
+        const favorito = this.favoriti.find((f) => f.pokemonId === pokemon.id);
+        return favorito?.id;
     }
 }

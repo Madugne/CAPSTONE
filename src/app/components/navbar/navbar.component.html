@@ -1,9 +1,9 @@
-<nav class="navbar navbar-dark bg-dark text-dark navbar-expand-lg">
+<nav class="navbar navbar-dark bg-dark text-dark navbar-expand-lg fixed-top">
     <div class="container-fluid">
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item" *ngIf="utente">
-                    <a class="nav-link" [routerLink]="['/list']" routerLinkActive="active">pokemon</a>
+                    <a class="nav-link" [routerLink]="['/list']" routerLinkActive="active">Pokemon</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active navbar-brand" aria-current="page" [routerLink]="['/']"
@@ -12,24 +12,28 @@
                 <li class="dropdown" *ngIf="utente">
                     <a class="nav-link dropdown-toggle" [routerLink]="['/profile']" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Profilo
+                        Your profile
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" [routerLink]="['/profile/details']">Dettagli</a></li>
-                        <li><a class="dropdown-item" [routerLink]="['/profile/favorites']">Preferiti</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/profile/details']">Details</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/profile/favorites']">Favorites</a></li>
                     </ul>
                 </li>
                 <li class="nav-item" *ngIf="!utente">
-                    <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Accedi</a>
+                    <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Log In</a>
                 </li>
                 <li class="nav-item" *ngIf="!utente">
-                    <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Registrati</a>
+                    <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Register</a>
                 </li>
             </ul>
-            <div class="text-end" *ngIf="utente">
-                <h6>Benvenuto {{utente.user.name }} </h6>
-                <button type="button" id="logout" name="logout" class="btn btn-danger" (click)="logout()">Esci</button>
+            <a routerLinkActive="active" class="nav-link text-white" (click)="scrollTo()" id="scrollToTopButton">
+                Go to top
+            </a>
+            <div class="d-flex d-flex justify-content-center" *ngIf="utente">
+                <h6 class="m-2">Hello {{utente.user.name }}! </h6>
+                <button type="button" id="logout" name="logout" class="btn btn-danger" (click)="logout()">Log
+                    out</button>
             </div>
         </div>
     </div>

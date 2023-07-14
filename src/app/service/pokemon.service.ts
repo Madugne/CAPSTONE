@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Favourite } from '../models/favourite.interface';
+import { AuthService } from '../auth/auth.service';
+import { Pokemon } from '../models/pokemon.interface';
 
 @Injectable({
     providedIn: 'root',
@@ -11,14 +14,12 @@ export class PokemonService {
     private _pokemons: any[] = [];
     private _next: string = '';
 
+    apiUrl = environment.apiUrl;
+    baseUrl = environment.baseURL;
+
     private _favorites: any[] = [];
 
-    constructor(private http: HttpClient) {
-        const storedFavorites = localStorage.getItem('favorites');
-        if (storedFavorites) {
-            this._favorites = JSON.parse(storedFavorites);
-        }
-    }
+    constructor(private http: HttpClient, private authSrv: AuthService) {}
 
     get pokemons(): any[] {
         return this._pokemons;
@@ -58,23 +59,29 @@ export class PokemonService {
         return this.http.get<any>(url);
     }
 
-    addToFavorites(pokemon: any): void {
-        this._favorites.push(pokemon);
+    recuperaFavoriti(userId: number) {
+        return this.http.get<Favourite[]>(
+            `${this.baseUrl}favorites?userId=${userId}`
+        );
     }
 
-    get favorites(): any[] {
-        return this._favorites;
+    recuperaPokemon() {
+        return this.http.get<Pokemon[]>(`${this.apiUrl}`);
     }
 
-    removeFromFavorites(pokemon: any): void {
-        const index = this._favorites.findIndex((p) => p.id === pokemon.id);
-        if (index !== -1) {
-            this._favorites.splice(index, 1);
-            this.saveFavorites();
-        }
+    aggiungiFavorito(favorito: Favourite) {
+        return this.http.post(`${this.baseUrl}favorites`, favorito);
     }
 
-    private saveFavorites(): void {
-        localStorage.setItem('favorites', JSON.stringify(this._favorites));
+    rimuoviFavorito(favoritoId: number) {
+        return this.http.delete(`${this.baseUrl}favorites/${favoritoId}`);
+    }
+
+    recuperaPreferiti() {
+        const utente = JSON.parse(localStorage.getItem('user')!);
+        const id = utente.user.id;
+        return this.http.get<Favourite[]>(
+            `${this.baseUrl}favorites?userId=${id}`
+        );
     }
 }

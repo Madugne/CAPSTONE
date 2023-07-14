@@ -17,6 +17,19 @@
       "password": "$2a$10$I5PWuCl5R8uIkWcHK6G6qeVFMveJ7YYLEF2fZz2eX5doKbWp/2U/.",
       "name": "pasta",
       "id": 3
+    },
+    {
+      "email": "pokemon@pokemon.com",
+      "password": "$2a$10$c6lsIdST.cN13K8A64IcVukSzxCacl2sJdWmVajEo8a0vVDs/QulS",
+      "name": "pokemon",
+      "id": 4
+    }
+  ],
+  "favorites": [
+    {
+      "userId": 1,
+      "pokemonId": 1,
+      "id": 1
     }
   ]
 }

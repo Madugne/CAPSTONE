@@ -16,6 +16,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ListComponent } from './components/list/list.component';
 import { ViewComponent } from './components/view/view.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 const rotte: Route[] = [
     {
@@ -87,6 +88,7 @@ const rotte: Route[] = [
         BrowserModule,
         FormsModule,
         HttpClientModule,
+        Ng2SearchPipeModule,
         RouterModule.forRoot(rotte, {
             scrollPositionRestoration: 'top',
         }),
