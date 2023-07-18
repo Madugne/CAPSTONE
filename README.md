@@ -1,8 +1,21 @@
 # Pokedex :video_game:
 
-Questo progetto e' realizzato con [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
-Necessita in oltre di json server e ng2-search-filter
+Questo progetto ricrea il Pokedex dal gioco Pokemon, includendo tutti i Pokemon delle generazioni attuali e indicizzandoli con tutte le loro informazioni ℹ️.
 
-## Cos'e' questa app pokedex?
+Ho creato questo Pokedex perché sono un appassionato di videogiochi, tra cui Pokemon, e volevo realizzare qualcosa che mi piacesse e fosse utile. Quindi ho deciso di ricreare l'enciclopedia del gioco, ovvero il Pokedex.
 
-L'app Pokedex 
+Per coloro che non ne sono a conoscenza, il Pokédex è un'enciclopedia digitale essenziale per gli Allenatori nel mondo dei Pokemon. Il Pokédex fornisce informazioni su tutti i Pokemon presenti nel suo database.
+
+Questo progetto è stato realizzato utilizzando Angular CLI versione 14.2.11. È necessario anche l'utilizzo di json-server e ng2-search-filter.
+
+## Come installare e avviare il progetto
+
+Necessita di questi comandi nel terminale:
+
+npm i
+npm i json-server json-server-auth
+npm i @auth0/angular-jwt
+npmi i concurrently
+npm i ng2-search-filter
+
+Per avviare il progetto usare il comando "npm run fullstack"
