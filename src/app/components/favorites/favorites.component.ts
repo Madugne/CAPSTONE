@@ -22,7 +22,6 @@ export class FavoritesComponent implements OnInit {
     ) {
         this.authSrv.user$.subscribe((userData) => {
             this.user = userData;
-            //this.recuperaFavoriti();
             if (this.user) {
                 this.userId = this.user.user.id;
                 this.recuperaFavoritiStampa();
@@ -56,35 +55,4 @@ export class FavoritesComponent implements OnInit {
             }
         });
     }
-
-    getType(pokemon: any): string {
-        return this.pokemonService.getType(pokemon);
-    }
-
-    //////////////////
-
-    // recuperaFavoriti(): void {
-    //     if (this.user) {
-    //         //errore possibile array favoriti vuoto
-    //         this.pokemonService
-    //             .recuperaFavoriti(this.user.user.id)
-    //             .subscribe((favoriti: Favourite[]) => {
-    //                 console.log(`favoritiii:`, this.favoriti);
-    //                 const pokemonIds = favoriti.map(
-    //                     (f: Favourite) => f.pokemonId
-    //                 );
-
-    //                 //todo check
-    //                 this.pokemonService
-    //                     .recuperaPokemon()
-    //                     .subscribe((pokemons: Pokemon[]) => {
-    //                         console.log(`hey`, pokemons);
-    //                         this.favoriti = Object.values(pokemons).filter(
-    //                             (p: Pokemon) => pokemonIds.includes(p.id)
-    //                         );
-    //                         console.log(`favoriti:`, this.favoriti);
-    //                     });
-    //             });
-    //     }
-    // }
 }
