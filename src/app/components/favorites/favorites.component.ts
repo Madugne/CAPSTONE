@@ -28,19 +28,23 @@ export class FavoritesComponent implements OnInit {
 
     recuperaFavoriti(): void {
         if (this.user) {
+            //errore possibile array favoriti vuoto
             this.pokemonService
                 .recuperaFavoriti(this.user.user.id)
                 .subscribe((favoriti: Favourite[]) => {
                     const pokemonIds = favoriti.map(
                         (f: Favourite) => f.pokemonId
                     );
+
+                    //todo check
                     this.pokemonService
                         .recuperaPokemon()
                         .subscribe((pokemons: Pokemon[]) => {
-                            console.log(pokemons);
-                            this.favoriti = pokemons.filter((p: Pokemon) =>
-                                pokemonIds.includes(p.id)
+                            console.log(`hey`, pokemons);
+                            this.favoriti = Object.values(pokemons).filter(
+                                (p: Pokemon) => pokemonIds.includes(p.id)
                             );
+                            console.log(`favoriti:`, this.favoriti);
                         });
                 });
         }

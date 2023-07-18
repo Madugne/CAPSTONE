@@ -23,13 +23,69 @@
       "password": "$2a$10$c6lsIdST.cN13K8A64IcVukSzxCacl2sJdWmVajEo8a0vVDs/QulS",
       "name": "pokemon",
       "id": 4
+    },
+    {
+      "email": "tommy@tommy.com",
+      "password": "$2a$10$pJrb5mTyoFeCRQELcP3U9uNUnMEcXEfec.UOavhjSd9PGvofrUx2q",
+      "name": "tommy",
+      "id": 5
     }
   ],
   "favorites": [
     {
+      "userId": 5,
+      "pokemonId": 1,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "pokemonId": 3,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "pokemonId": 5,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "pokemonId": 6,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "pokemonId": 8,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "pokemonId": 7,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "pokemonId": 9,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "pokemonId": 10,
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "pokemonId": 2,
+      "id": 15
+    },
+    {
       "userId": 1,
       "pokemonId": 1,
-      "id": 1
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "pokemonId": 4,
+      "id": 17
     }
   ]
 }
