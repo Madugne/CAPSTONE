@@ -1,4 +1,4 @@
-# Pokedex :video_game:
+# IT  Pokedex :video_game:
 
 Questo progetto ricrea il Pokedex dal gioco Pokemon, includendo tutti i Pokemon delle generazioni attuali e indicizzandoli con tutte le loro informazioni.
 
