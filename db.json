@@ -11,76 +11,13 @@
       "password": "$2a$10$eWqIGEpsMfu0N4wMVO20GO1UDBJTWBIUIiTFigTWs3FzB68vmn6iu",
       "name": "pane",
       "id": 2
-    },
-    {
-      "email": "pasta@pasta.com",
-      "password": "$2a$10$I5PWuCl5R8uIkWcHK6G6qeVFMveJ7YYLEF2fZz2eX5doKbWp/2U/.",
-      "name": "pasta",
-      "id": 3
-    },
-    {
-      "email": "pokemon@pokemon.com",
-      "password": "$2a$10$c6lsIdST.cN13K8A64IcVukSzxCacl2sJdWmVajEo8a0vVDs/QulS",
-      "name": "pokemon",
-      "id": 4
-    },
-    {
-      "email": "tommy@tommy.com",
-      "password": "$2a$10$pJrb5mTyoFeCRQELcP3U9uNUnMEcXEfec.UOavhjSd9PGvofrUx2q",
-      "name": "tommy",
-      "id": 5
     }
   ],
   "favorites": [
     {
-      "userId": 5,
-      "pokemonId": 1,
-      "id": 6
-    },
-    {
       "userId": 1,
       "pokemonId": 1,
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "pokemonId": 2,
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "pokemonId": 3,
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "pokemonId": 4,
-      "id": 15
-    },
-    {
-      "userId": 1,
-      "pokemonId": 5,
-      "id": 16
-    },
-    {
-      "userId": 1,
-      "pokemonId": 6,
-      "id": 17
-    },
-    {
-      "userId": 1,
-      "pokemonId": 7,
-      "id": 18
-    },
-    {
-      "userId": 1,
-      "pokemonId": 8,
-      "id": 19
-    },
-    {
-      "userId": 1,
-      "pokemonId": 9,
-      "id": 20
+      "id": 1
     }
   ]
 }
