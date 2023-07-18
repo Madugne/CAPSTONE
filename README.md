@@ -12,10 +12,10 @@ Questo progetto è stato realizzato utilizzando Angular CLI versione 14.2.11. È
 
 Per installare le dipendenze, eseguire i seguenti comandi nel terminale:
 
-npm install
-npm install json-server json-server-auth
-npm install @auth0/angular-jwt
-npm install concurrently
-npm install ng2-search-filter
+- npm install
+- npm install json-server json-server-auth
+- npm install @auth0/angular-jwt
+- npm install concurrently
+- npm install ng2-search-filter
 
 Per avviare il progetto, utilizzare il comando "npm run fullstack".
