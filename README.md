@@ -1,43 +1,27 @@
-# ENG  Pokedex :video_game:
+# Pokedex
 
-This project recreates the Pokedex from the Pokemon game, including all the Pokemon from the current generations and indexing them with all their information ℹ️.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
 
-I created this Pokedex because I'm a passionate gamer and I like Pokemon, I wanted to create something that I enjoy and find useful. So, I decided to recreate the game's encyclopedia, known as the Pokedex.
+## Development server
 
-For those who are not familiar with it, the Pokedex is a digital encyclopedia that is essential for Trainers in the world of Pokemon. The Pokedex provides information about all the Pokemon in its database.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-This project was built using Angular CLI version 14.2.11. It also requires the use of json-server and ng2-search-filter.
+## Code scaffolding
 
-## How to Install and Run the Project
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-To install the dependencies, run the following commands in the vs-code terminal:
+## Build
 
-- npm install
-- npm install json-server json-server-auth
-- npm install @auth0/angular-jwt
-- npm install concurrently
-- npm install ng2-search-filter
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-To run the project, use the command "npm run fullstack".
+## Running unit tests
 
-# IT  Pokedex :video_game:
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Questo progetto ricrea il Pokedex dal gioco Pokemon, includendo tutti i Pokemon delle generazioni attuali e indicizzandoli con tutte le loro informazioni.
+## Running end-to-end tests
 
-Ho creato questo Pokedex perché sono un appassionato di videogiochi, tra cui Pokemon, e volevo realizzare qualcosa che mi piacesse e fosse utile. Quindi ho deciso di ricreare l'enciclopedia del gioco, ovvero il Pokedex.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Per coloro che non ne sono a conoscenza, il Pokédex è un'enciclopedia digitale essenziale per gli Allenatori nel mondo dei Pokemon. Il Pokédex fornisce informazioni su tutti i Pokemon presenti nel suo database.
+## Further help
 
-Questo progetto è stato realizzato utilizzando Angular CLI versione 14.2.11. È necessario anche l'utilizzo di json-server e ng2-search-filter.
-
-## Come installare e avviare il progetto
-
-Per installare le dipendenze, eseguire i seguenti comandi nel terminale di vs-code:
-
-- npm install
-- npm install json-server json-server-auth
-- npm install @auth0/angular-jwt
-- npm install concurrently
-- npm install ng2-search-filter
-
-Per avviare il progetto, utilizzare il comando "npm run fullstack".
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

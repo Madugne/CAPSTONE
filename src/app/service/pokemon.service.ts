@@ -84,4 +84,8 @@ export class PokemonService {
             `${this.baseUrl}favorites?userId=${id}`
         );
     }
+
+    dettaglioPreferito(id: number) {
+        return this.http.get<Pokemon>(`${this.apiUrl}pokemon/${id}`);
+    }
 }

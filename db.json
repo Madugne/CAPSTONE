@@ -39,53 +39,48 @@
     },
     {
       "userId": 1,
-      "pokemonId": 3,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "pokemonId": 5,
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "pokemonId": 6,
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "pokemonId": 8,
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "pokemonId": 7,
+      "pokemonId": 1,
       "id": 12
     },
     {
       "userId": 1,
-      "pokemonId": 9,
+      "pokemonId": 2,
       "id": 13
     },
     {
       "userId": 1,
-      "pokemonId": 10,
+      "pokemonId": 3,
       "id": 14
     },
     {
       "userId": 1,
-      "pokemonId": 2,
+      "pokemonId": 4,
       "id": 15
     },
     {
       "userId": 1,
-      "pokemonId": 1,
+      "pokemonId": 5,
       "id": 16
     },
     {
       "userId": 1,
-      "pokemonId": 4,
+      "pokemonId": 6,
       "id": 17
+    },
+    {
+      "userId": 1,
+      "pokemonId": 7,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "pokemonId": 8,
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "pokemonId": 9,
+      "id": 20
     }
   ]
 }

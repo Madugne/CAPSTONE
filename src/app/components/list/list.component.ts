@@ -80,13 +80,6 @@ export class ListComponent implements OnInit, OnDestroy {
         return this.pokemonService.getType(pokemon);
     }
 
-    /*
-    addToFavorites(pokemon: any): void {
-        // Add the Pokemon to the favorites list in the PokemonService
-        this.pokemonService.addToFavorites(pokemon);
-    }
-    */
-
     aggiungiFavorito(idPokemon: number): void {
         const favorito: Favourite = {
             userId: this.utente!.user.id,
