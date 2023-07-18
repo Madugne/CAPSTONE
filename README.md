@@ -1,6 +1,6 @@
 # Pokedex :video_game:
 
-Questo progetto ricrea il Pokedex dal gioco Pokemon, includendo tutti i Pokemon delle generazioni attuali e indicizzandoli con tutte le loro informazioni ℹ️.
+Questo progetto ricrea il Pokedex dal gioco Pokemon, includendo tutti i Pokemon delle generazioni attuali e indicizzandoli con tutte le loro informazioni.
 
 Ho creato questo Pokedex perché sono un appassionato di videogiochi, tra cui Pokemon, e volevo realizzare qualcosa che mi piacesse e fosse utile. Quindi ho deciso di ricreare l'enciclopedia del gioco, ovvero il Pokedex.
 
