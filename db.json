@@ -14,10 +14,6 @@
     }
   ],
   "favorites": [
-    {
-      "userId": 1,
-      "pokemonId": 1,
-      "id": 1
-    }
+
   ]
 }

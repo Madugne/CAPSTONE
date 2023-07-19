@@ -12,15 +12,19 @@ export class NavbarComponent implements OnInit {
 
     constructor(private authSrv: AuthService) {}
 
+    //recupero dati dell'utente loggato
     ngOnInit(): void {
         this.authSrv.user$.subscribe((_utente) => {
             this.utente = _utente;
         });
     }
 
+    //fa il logout dell'utente loggato
     logout() {
         this.authSrv.logout();
     }
+
+    //torna in cima alla pagina al click della freccia nella navbar
     scrollTo() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }

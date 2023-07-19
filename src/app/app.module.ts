@@ -18,6 +18,8 @@ import { ListComponent } from './components/list/list.component';
 import { ViewComponent } from './components/view/view.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+//AuthGuard non permette la visualizzazione dei contenuti se non si e' loggati
+
 const rotte: Route[] = [
     {
         path: 'list',

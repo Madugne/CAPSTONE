@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    //funzione per l'accesso dell'utente registrato con ricezioni di eventuali errori
     accedi(form: NgForm) {
         try {
             this.authSrv.login(form.value).subscribe();

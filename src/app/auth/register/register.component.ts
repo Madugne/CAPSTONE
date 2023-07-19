@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    //funzione per la registrazione dell'utente
     registra(form: NgForm) {
         try {
             this.authSrv.registra(form.value).subscribe();

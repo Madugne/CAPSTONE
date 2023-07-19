@@ -39,6 +39,7 @@ export class AuthService {
         this.router.navigate(['/login']);
     }
 
+    //Logout automatico alla scadenza del token
     autoLogout(data: Auth) {
         const scadenza = this.jwtHelper.getTokenExpirationDate(
             data.accessToken
@@ -50,6 +51,7 @@ export class AuthService {
         }, tempoScadenza);
     }
 
+    //recupero dell'utente loggato nel local storage
     restore() {
         const utenteLoggato = localStorage.getItem('user');
         if (!utenteLoggato) {

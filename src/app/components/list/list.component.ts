@@ -34,14 +34,18 @@ export class ListComponent implements OnInit, OnDestroy {
         this.utente = JSON.parse(this.utente);
     }
 
+    //chiamata all'api che mi prende tutti i pokemon
     get pokemons(): any[] {
         return this.pokemonService.pokemons;
     }
 
+    //aggiunge una nuova sottoscrizione all'array subscriptions
     set subscription(subscription: Subscription) {
         this.subscriptions.push(subscription);
     }
 
+    //do la possibilita' di caricare piu pokemon nella pagina tramite la funzione loadMore
+    //dopo il login mi recupero eventuali preferiti
     ngOnInit(): void {
         if (!this.pokemons.length) {
             this.loadMore();
@@ -51,12 +55,14 @@ export class ListComponent implements OnInit, OnDestroy {
             .subscribe((pokemon) => (this.favoriti = pokemon));
     }
 
+    //distruggo eventuali subscription attive prima che il componente venga distrutto
     ngOnDestroy(): void {
         this.subscriptions.forEach((subscription) =>
             subscription ? subscription.unsubscribe() : 0
         );
     }
 
+    //funzioni per caricare altri pokemon dall'api
     loadMore(): void {
         this.loading = true;
         this.subscription = this.pokemonService.getNext().subscribe(
@@ -76,10 +82,12 @@ export class ListComponent implements OnInit, OnDestroy {
         );
     }
 
+    //prende il tipo del pokemon tramite api
     getType(pokemon: any): string {
         return this.pokemonService.getType(pokemon);
     }
 
+    //aggiunge il pokemon ai favoriti al click del bottone
     aggiungiFavorito(idPokemon: number): void {
         const favorito: Favourite = {
             userId: this.utente!.user.id,
@@ -95,6 +103,7 @@ export class ListComponent implements OnInit, OnDestroy {
         });
     }
 
+    //elimina il pokemon dai favoriti al click del bottone
     eliminaFavorito(pokemon: number): void {
         const userId = JSON.parse(localStorage.getItem('user')!).user.id;
         const trovato = this.favoriti.find(
@@ -110,10 +119,12 @@ export class ListComponent implements OnInit, OnDestroy {
         });
     }
 
+    //controlla che il pokemon sia gia' nei favoriti
     isFavorito(pokemon: Pokemon): Favourite | undefined {
         return this.favoriti.find((f) => f.pokemonId === pokemon.id);
     }
 
+    //prende l'id del pokemon favorito
     getIdFavorito(pokemon: Pokemon): number | undefined {
         const favorito = this.favoriti.find((f) => f.pokemonId === pokemon.id);
         return favorito?.id;

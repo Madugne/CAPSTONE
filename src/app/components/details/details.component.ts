@@ -11,6 +11,7 @@ export class DetailsComponent implements OnInit {
     utente!: Auth | null;
     constructor(private authSrv: AuthService) {}
 
+    //recupero dati dell'utente loggato
     ngOnInit(): void {
         this.authSrv.user$.subscribe((_utente) => {
             this.utente = _utente;

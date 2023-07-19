@@ -22,6 +22,7 @@ export class ViewComponent implements OnInit {
         this.subscriptions.push(subscription);
     }
 
+    //carica i dettagli del pokemon
     ngOnInit(): void {
         this.subscription = this.route.params.subscribe((params) => {
             if (this.pokemonService.pokemons.length) {
@@ -52,6 +53,7 @@ export class ViewComponent implements OnInit {
         );
     }
 
+    //metodo per ottenere le informazioni sull'evoluzione del pokemon
     getEvolution() {
         if (!this.pokemon.evolutions || !this.pokemon.evolutions.length) {
             this.pokemon.evolutions = [];
@@ -68,6 +70,7 @@ export class ViewComponent implements OnInit {
         }
     }
 
+    //viene chiamato per elaborare la catena di evoluzione di un Pokémon
     getEvolves(chain: any) {
         this.pokemon.evolutions.push({
             id: this.getId(chain.species.url),
@@ -79,10 +82,12 @@ export class ViewComponent implements OnInit {
         }
     }
 
+    //viene chiamato per prendere il tipo del pokemon
     getType(pokemon: any): string {
         return this.pokemonService.getType(pokemon);
     }
 
+    //viene utilizzato per estrarre l'ID da una URL
     getId(url: string): number {
         const splitUrl = url.split('/');
         return +splitUrl[splitUrl.length - 2];

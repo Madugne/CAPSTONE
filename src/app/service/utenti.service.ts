@@ -7,12 +7,12 @@ import { Utente } from '../models/utente.interface';
     providedIn: 'root',
 })
 export class UtentiService {
-
     baseURL = environment.baseURL;
 
     constructor(private http: HttpClient) {}
 
+    //recupera gli utenti registrati in locale dal json server
     recuperaUtenti() {
-        return this.http.get<Utente[]>(`${this.baseURL}users`)
+        return this.http.get<Utente[]>(`${this.baseURL}users`);
     }
 }

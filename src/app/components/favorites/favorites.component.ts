@@ -20,6 +20,7 @@ export class FavoritesComponent implements OnInit {
         private pokemonService: PokemonService,
         private authSrv: AuthService
     ) {
+        //recupera i favoriti dell'utente attraverso il suo user id e lo manda in stampa
         this.authSrv.user$.subscribe((userData) => {
             this.user = userData;
             if (this.user) {
@@ -35,6 +36,7 @@ export class FavoritesComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    //recupero i favoriti di uno specifico utente per poi stamparli
     recuperaFavoritiStampa() {
         this.pokemonService
             .recuperaFavoriti(this.userId)
@@ -44,6 +46,7 @@ export class FavoritesComponent implements OnInit {
             });
     }
 
+    //stampa i pokemon preferiti attraverso l'id
     stampaPreferiti() {
         this.preferiti.forEach((pok) => {
             if (pok.pokemonId) {
