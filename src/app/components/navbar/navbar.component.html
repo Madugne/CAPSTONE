@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark text-dark navbar-expand-lg fixed-top">
+<nav class="navbar navbar-dark text-dark navbar-expand-lg fixed-top">
     <div class="container-fluid">
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
@@ -44,7 +44,8 @@
                     <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Register</a>
                 </li>
             </ul>
-            <a routerLinkActive="active" class="nav-link text-white me-5" (click)="scrollTo()" id="scrollToTopButton">
+            <a *ngIf="utente" routerLinkActive="active" class="nav-link text-white me-5" (click)="scrollTo()"
+                id="scrollToTopButton">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-arrow-up" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
