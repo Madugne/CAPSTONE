@@ -11,7 +11,19 @@
       "password": "$2a$10$eWqIGEpsMfu0N4wMVO20GO1UDBJTWBIUIiTFigTWs3FzB68vmn6iu",
       "name": "pane",
       "id": 2
+    },
+    {
+      "email": "fabio@gmail.com",
+      "password": "$2a$10$RZGrqTxnrn/WGAWr76/b5.rcd2Dc/OLvrKyGCSjlrdhX1eg9NkHRW",
+      "name": "Fabio",
+      "id": 3
     }
   ],
-  "favorites": []
+  "favorites": [
+    {
+      "userId": 1,
+      "pokemonId": 4,
+      "id": 1
+    }
+  ]
 }
